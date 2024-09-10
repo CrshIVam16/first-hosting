@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>BCA Department</title>
+  <style>
+    body {
+      margin-left: 100px;
+    }
+
+    .d1 {
+      width: 1200px;
+      height: 500px;
+      font-weight: bolder;
+      background-color: aqua;
+      padding: 80px 30px 30px 30px;
+      border: 3px solid black;
+      border-radius: 30%;
+    }
+
+    .d2 {
+      margin: 40px;
+      width: 195px;
+      height: 250px;
+      font-weight: bolder;
+      background-color: black;
+      padding: 10px;
+      float: left;
+      border-radius: 10%;
+    }
+
+    .d2 img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    button {
+      margin-right: 10px;
+      margin-left: 30px;
+      border-radius: 20%;
+      font-size: 15px;
+    }
+
+    img {
+      width: 200px;
+      height: 200px;
+    }
+
+    /* Dark mode styles */
+    body.dark-mode {
+      background-color: #333;
+      color: white;
+    }
+
+    .dark-mode .d1 {
+      background-color: black;
+    }
+
+    .dark-mode .d2 {
+      background-color: grey;
+    }
+
+    .dark-mode button {
+      background-color: #777;
+      color: white;
+    }
+  </style>
+</head>
+
+<body>
+  <!-- Dark Mode Toggle Button -->
+  <button id="toggleDarkMode">Toggle Dark Mode</button>
+  <div class="d1">
+    <div class="d2">
+      <img src="pics/thunder.png" alt="Loading error">
+      <button onclick="playSound1()">Play</button>
+      <button onclick="stopSound1()">Stop</button>
+    </div>
+    <div class="d2">
+      <img src="pics/forest.png" alt="Loading error">
+      <button onclick="playSound2()">Play</button>
+      <button onclick="stopSound2()">Stop</button>
+    </div>
+    <div class="d2">
+      <img src="pics/rain.png" alt="Loading error">
+      <button onclick="playSound3()">Play</button>
+      <button onclick="stopSound3()">Stop</button>
+    </div>
+    <div class="d2">
+      <img src="pics/river.png" alt="Loading error" height="500">
+      <button onclick="playSound4()">Play</button>
+      <button onclick="stopSound4()">Stop</button>
+    </div>
+
+    <!-- Add more divs as needed -->
+  </div>
+
+  <!-- Audio elements -->
+  <audio id="audio1" src="pics/rain-thunder.mp3"></audio>
+  <audio id="audio2" src="pics/wildlife.mp3"></audio>
+  <audio id="audio3" src="pics/storm.mp3"></audio>
+  <audio id="audio4" src="pics/water.mp3"></audio>
+
+  <script>
+    // Function to play the first sound
+    function playSound1() {
+      var audio = document.getElementById('audio1');
+      audio.play().catch(function (error) {
+        console.error("Playback error:", error);
+      });
+    }
+
+    // Function to stop the first sound
+    function stopSound1() {
+      var audio = document.getElementById('audio1');
+      audio.pause();
+      audio.currentTime = 0; // Reset to the beginning
+    }
+
+    // Function to play the second sound
+    function playSound2() {
+      var audio = document.getElementById('audio2');
+      audio.play().catch(function (error) {
+        console.error("Playback error:", error);
+      });
+    }
+
+    // Function to stop the second sound
+    function stopSound2() {
+      var audio = document.getElementById('audio2');
+      audio.pause();
+      audio.currentTime = 0; // Reset to the beginning
+    }
+    // Function to play the second sound
+    function playSound3() {
+      var audio = document.getElementById('audio3');
+      audio.play().catch(function (error) {
+        console.error("Playback error:", error);
+      });
+    }
+
+    // Function to stop the second sound
+    function stopSound3() {
+      var audio = document.getElementById('audio3');
+      audio.pause();
+      audio.currentTime = 0; // Reset to the beginning
+    }
+    // Function to play the second sound
+    function playSound4() {
+      var audio = document.getElementById('audio4');
+      audio.play().catch(function (error) {
+        console.error("Playback error:", error);
+      });
+    }
+
+    // Function to stop the second sound
+    function stopSound4() {
+      var audio = document.getElementById('audio4');
+      audio.pause();
+      audio.currentTime = 0; // Reset to the beginning
+    }
+    // Dark Mode Toggle Function
+    const toggleDarkMode = document.getElementById('toggleDarkMode');
+    toggleDarkMode.addEventListener('click', function () {
+      document.body.classList.toggle('dark-mode');
+    });
+  </script>
+</body>
+
+</html>
